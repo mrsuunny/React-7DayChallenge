@@ -25,6 +25,7 @@ export default function Gallary(){
 }
  */}
 
+import { Children } from "react";
 // import Gallery from "./Gallery"
 // import { Profile } from "./Profile"
 
@@ -219,16 +220,130 @@ export default function Gallary(){
 // - Ek <p> mein cooking time dikhaye (curly braces se)
 // - Default export ho
 
-const dish = {
-  name: 'Biryani',
-  time: '45 mins'
-}
+// const dish = {
+//   name: 'Biryani',
+//   time: '45 mins'
+// }
 
-export default function Recipe() {
+// export default function Recipe() {
+//   return(
+//     <>
+//     <h2>i Love {dish.name}</h2>
+//     <p> it takes just {dish.time} to cook my favorite {dish.name}</p>
+//     </>
+//   );
+// }
+
+
+// .............................PROPS..................................//
+
+// import { getImageUrl } from "./utils"
+
+// function Avatar({person, size}) {
+//   return(
+//     <img
+//       className="avatar"
+//       src={getImageUrl(person)}
+//       alt={person.name}
+//       width={size}
+//       height={size}
+//     />
+//   );
+// }
+
+// export default function Profile() {
+//   return (
+//     <>
+//     <Avatar
+//       person = {{
+//         name: 'Lin Lanying',
+//         imageId: '1bX5QH6'
+//       }}
+//       size={100}
+//     />
+//     <Avatar
+//       person = {{
+//         name: 'Katsuko Saruhashi',
+//         imageId: 'YfeOqp2'
+//       }}
+//       size={80}
+//     />
+//     <Avatar
+//       person = {{
+//         name: 'Aklilu Lemma',
+//         imageId: 'OKS67lh'
+//       }}
+//       size={50}
+//     />
+//     </>
+//   );
+// }
+
+
+// import { getImageUrl } from "./utils";
+
+// function Avatar({person, size}){
+//   return(
+//     <img
+//       className="avatar"
+//       src={getImageUrl(person)}
+//       alt={person.name}
+//       width={size}
+//       height={size}
+//     />
+//   );
+// }
+
+// export default function Profile() {
+//   return(
+//     <div>
+//       <Avatar
+//         person = {{
+//           name: '',
+//           imageId: ''
+//         }}
+//         size = {100}
+//       />
+//       <Avatar
+//         person = {{
+//           name: '',
+//           imageId: ''
+//         }}
+//         size = {100}
+//       />
+//       <Avatar
+//         person = {{
+//           name: '',
+//           imageId: ''
+//         }}
+//         size = {100}
+//       />
+//     </div>
+//   );
+// }
+
+
+import Avatar from "./Avatar";
+
+function Card({children}) {
   return(
-    <>
-    <h2>i Love {dish.name}</h2>
-    <p> it takes just {dish.time} to cook my favorite {dish.name}</p>
-    </>
+    <div className="card">
+      { children }
+    </div>
   );
 }
+
+export default function Profile() {
+  return(
+    <Card>
+      <Avatar
+        size={100}
+        person = {{
+          name: 'Katsuko Saruhashi',
+          imageId: 'YfeOqp2'
+        }}
+      />
+    </Card>
+  );
+}
+
