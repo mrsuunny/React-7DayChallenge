@@ -683,26 +683,341 @@ import {Children, use} from 'react'
 //   )
 // }
 
+// import { useState } from 'react'
+
+// export default function TrafficLight() {
+//   const [ walk, setWalk ] = useState(true)
+
+//   function handleClick() {
+//     setWalk(!walk)
+//     alert( walk? "Stop is next" : "Walk is next" )
+//   }
+
+//   return (
+//     <>
+//     <button onClick={handleClick}>
+//       Change to { walk? 'Stop' : 'Walk' }
+//     </button>
+//     <h1 style={{
+//       color: walk? 'darkgreen' : 'darkred'
+//     }}>
+//       { walk? 'Walk' : 'Stop' }
+//     </h1>
+//     </>
+//   );
+// }
+
+// ......................................... //
+
+// import { useState } from 'react'
+
+// export default function Buy() {
+//   const[ pending, setPending ] = useState(0)
+//   const [ completed, setCompleted ] = useState(0)
+
+//   async function handleClick() {
+//     setPending(pending + 1)
+//     await delay(3000);
+//     setPending(pending - 1)
+//     setCompleted(completed + 1)
+//   }
+
+//   return (
+//     <>
+//     <h3>
+//       Pending: {pending}
+//     </h3>
+//     <h3>
+//       Completed: {completed}
+//     </h3>
+//     <button onClick={handleClick}>
+//       Buy
+//     </button>
+//     </>
+//   );
+// }
+
+// function delay(ms) {
+//   return new Promise(resolve => {
+//     setTimeout(resolve, ms);
+//   })
+// }
+ // ........................................... //
+
+//  import { useState } from 'react';
+
+// export default function MovingDot() {
+//   const [position, setPosition] = useState({
+//     x: 0,
+//     y: 0
+//   });
+//   return (
+//     <div
+//       onPointerMove={e => {
+//         setPosition({
+//           x: e.clientX,
+//           y: e.clientY,
+//         });
+//       }}
+//       style={{
+//         position: 'relative',
+//         width: '100vw',
+//         height: '100vh',
+//       }}>
+//       <div style={{
+//         position: 'absolute',
+//         backgroundColor: 'red',
+//         borderRadius: '50%',
+//         transform: `translate(${position.x}px, ${position.y}px)`,
+//         left: -10,
+//         top: -10,
+//         width: 20,
+//         height: 20,
+//       }} />
+//     </div>
+//   );
+// }
+
+// import { useState } from 'react';
+
+// export default function MovingCircle() {
+//   const [ position, setPosition ] = useState({
+//     x: 0,
+//     y: 0
+//   });
+
+//   return (
+//     <div
+//       onPointerMove={e => {
+//         setPosition({
+//           x: e.clientX,
+//           y: e.clientY
+//         });
+//       }}
+//       style={{
+//         position: 'relative',
+//         width: '100vw',
+//         height: '100vh',
+//       }}
+//     >
+//       <div style={{
+//         position: 'absolute',
+//         backgroundColor: 'blueviolet',
+//         borderRadius: '100%',
+//         transform: `translate(${position.x}px, ${position.y}px)`,
+//         left: -10,
+//         right: -10,
+//         width: 50,
+//         height: 50,
+//       }} />
+//     </div>
+//   );
+// }
+
+// import { useState } from 'react'
+
+// export default function Form() {
+//   const [ person, setPerson ] = useState({
+//     firstName: 'Sana',
+//     lastName: 'Ullah',
+//     email: 'sanaullah@gmail.com'
+//   })
+
+//   function handleFirstnameChange(e) {
+//     setPerson({
+//       ...person,
+//       firstName: e.target.value
+//     })
+//   }
+//   function handleLastnameChange(e) {
+//     setPerson({
+//       ...person,
+//       lastName: e.target.value
+//     })
+//   }
+//   function handleEmailChange(e) {
+//     setPerson({
+//       ...person,
+//       email: e.target.value
+//     })
+//   }
+
+//   return (
+//     <>
+//     <label>
+//       First name:
+//       <input
+//         value={person.firstName}
+//         onChange={handleFirstnameChange}
+//       />
+//     </label>
+
+//     <label>
+//       Last name:
+//       <input
+//         value={person.lastName}
+//         onChange={handleLastnameChange}
+//       />
+//     </label>
+//     <label>
+//       Email:
+//       <input
+//         value={person.email}
+//         onChange={handleEmailChange}
+//       />
+//     </label>
+
+//     <p>
+//       {person.firstName} {' '} {person.lastName} {' '} ({person.email})
+//     </p>
+//     </>
+//   )
+
+// }
+
+// import { useState } from 'react'
+
+// export default function Form() {
+//   const [ person, setPerson ] = useState({
+//     name: 'Sanaullah',
+//     artwork: {
+//       title: 'Blue Nana',
+//       city: 'Humburg',
+//       image: 'https://react.dev/images/docs/scientists/Sd1AgUOm.jpg',
+//     }
+//   });
+
+//   function handleNameChange(e) {
+//     setPerson({
+//       ...person,
+//       name: e.target.value
+//     });
+//   }
+
+//   function handleTitleChange(e) {
+//     setPerson({
+//       ...person,
+//       artwork: {
+//         ...person.artwork,
+//         title: e.target.value
+//       }
+//     });
+//   }
+
+
+//   function handleCityChange(e) {
+//     setPerson({
+//       ...person,
+//       artwork: {
+//         ...person.artwork,
+//         city: e.target.value
+//       }
+//     });
+//   }
+
+//   function handleImageChange(e) {
+//     setPerson({
+//       ...person,
+//       artwork: {
+//         ...person.artwork,
+//         image: e.target.value
+//       }
+//     });
+//   }
+
+//   return (
+//     <>
+//       <label>
+//         Name:
+//         <input
+//           value={person.name}
+//           onChange={handleNameChange}
+//         />
+//       </label>
+
+//       <label>
+//         Title:
+//         <input
+//           value={person.artwork.title}
+//           onChange={handleTitleChange}
+//         />
+//       </label>
+//       <label>
+//         City:
+//         <input
+//           value={person.artwork.city}
+//           onChange={handleCityChange}
+//         />
+//       </label>
+//       <label>
+//         Image:
+//         <input
+//           value={person.artwork.image}
+//           onChange={handleImageChange}
+//         />
+//       </label>
+//       <p>
+//         <i>{person.artwork.title}</i> by {person.name}
+//         <br />
+//         (located in: {person.artwork.city})
+//         <br />
+//         <img src={person.artwork.image} alt={person.artwork.title} />
+//       </p>
+//     </>
+//   );
+// }
+
 import { useState } from 'react'
 
-export default function TrafficLight() {
-  const [ walk, setWalk ] = useState(true)
+export default function ScoreBoard() {
+  const [ player, setPlayer ] = useState({
+    firstName: 'Sana',
+    lastName: 'Ullah',
+    score: 10,
+  })
 
-  function handleClick() {
-    setWalk(!walk)
-    alert( walk? "Stop is next" : "Walk is next" )
+  function handleScore() {
+    setPlayer({
+      score: player.score + 1
+    })
+  }
+
+  function handleFirstName(e) {
+    setPlayer({
+      firstName: e.target.value
+    })
+  }
+
+  function handleLastName(e) {
+    setPlayer({
+      lastName: e.target.value
+    })
   }
 
   return (
     <>
-    <button onClick={handleClick}>
-      Change to { walk? 'Stop' : 'Walk' }
-    </button>
-    <h1 style={{
-      color: walk? 'darkgreen' : 'darkred'
-    }}>
-      { walk? 'Walk' : 'Stop' }
-    </h1>
+      <label>
+        Score: <b>{player.score}</b>
+        {' '}
+        <button onClick={handleScore}>
+          +1
+        </button>
+      </label>
+      <label>
+        First name:
+        <input
+          value={player.firstName}
+          onChange={handleFirstName}
+        />
+      </label>
+      <label>
+        Last name:
+        <input
+          value={player.lastName}
+          onChange={handleLastName}
+        />
+      </label>
     </>
   );
 }
+
